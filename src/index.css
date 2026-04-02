@@ -35,12 +35,16 @@
     --radius: 0.25rem;
 
     /* Custom palette */
-    --beige: #f5f0ea;
-    --beige-dark: #ede5d8;
-    --stone: #9a9187;
-    --charcoal: #1e1a17;
-    --charcoal-light: #3a3530;
-    --warm-white: #faf7f4;
+    --beige: #ede5d6;
+    --beige-dark: #d9cdb8;
+    --beige-card: #f7f2eb;
+    --stone: #7a7168;
+    --stone-light: #a89e94;
+    --charcoal: #18140f;
+    --charcoal-light: #2e2820;
+    --charcoal-mid: #3d3730;
+    --warm-white: #faf7f3;
+    --cream: #f2ece2;
 
     --sidebar-background: 36 20% 97%;
     --sidebar-foreground: 20 10% 12%;
