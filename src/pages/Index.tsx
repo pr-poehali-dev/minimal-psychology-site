@@ -147,18 +147,53 @@ const Index = () => {
             </p>
           </div>
 
-          <h1
-            className="reveal reveal-delay-1 font-display leading-[1.08] mb-8"
-            style={{ fontWeight: 400, fontSize: "clamp(2.4rem, 5.8vw, 4.8rem)" }}
-          >
-            Ты многое понимаешь
-            <br />
-            <em style={{ fontStyle: "italic", fontWeight: 300 }}>про себя.</em>
-            <br />
-            Но продолжаешь жить
-            <br />
-            не так, как хочешь.
-          </h1>
+          {/* Hero headline — visual split */}
+          <div className="reveal reveal-delay-1 mb-8">
+            {/* Line 1: "Ты многое понимаешь про себя." */}
+            <div className="overflow-hidden mb-1">
+              <p
+                className="font-display leading-[1.1]"
+                style={{ fontWeight: 400, fontSize: "clamp(2.2rem, 5.4vw, 4.4rem)" }}
+              >
+                Ты многое понимаешь{" "}
+                <em style={{ fontStyle: "italic", fontWeight: 400 }}>про себя.</em>
+              </p>
+            </div>
+            {/* Separator */}
+            <div className="flex items-center gap-4 my-4">
+              <div className="h-px flex-1" style={{ backgroundColor: "var(--beige-dark)", maxWidth: "60px" }}></div>
+              <span className="font-body text-xs tracking-[0.3em] uppercase" style={{ color: "var(--stone-light)" }}>но</span>
+              <div className="h-px flex-1" style={{ backgroundColor: "var(--beige-dark)", maxWidth: "60px" }}></div>
+            </div>
+            {/* Line 2: highlighted */}
+            <div
+              className="inline-block px-4 py-2 -mx-4"
+              style={{ backgroundColor: "var(--charcoal)" }}
+            >
+              <p
+                className="font-display leading-[1.15]"
+                style={{
+                  fontWeight: 500,
+                  fontSize: "clamp(2.2rem, 5.4vw, 4.4rem)",
+                  color: "var(--warm-white)",
+                }}
+              >
+                продолжаешь жить
+              </p>
+            </div>
+            <div className="mt-1">
+              <p
+                className="font-display leading-[1.1]"
+                style={{
+                  fontWeight: 400,
+                  fontSize: "clamp(2.2rem, 5.4vw, 4.4rem)",
+                  color: "var(--charcoal)",
+                }}
+              >
+                не так, как хочешь.
+              </p>
+            </div>
+          </div>
 
           <div className="reveal reveal-delay-2 line-draw my-10" style={{ maxWidth: "80px" }}></div>
 
@@ -186,6 +221,84 @@ const Index = () => {
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
           <Icon name="ChevronDown" size={16} style={{ color: "var(--stone)", opacity: 0.4 }} className="animate-bounce" />
+        </div>
+      </section>
+
+      {/* INTERLUDE: Фото + цитата */}
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundColor: "var(--charcoal)", minHeight: "90vh" }}
+      >
+        <div className="grid md:grid-cols-2 min-h-[90vh]">
+          {/* Photo side */}
+          <div className="relative overflow-hidden" style={{ minHeight: "400px" }}>
+            <img
+              src={PHOTO_URL}
+              alt="Анна Соколова"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              style={{ filter: "grayscale(20%) brightness(0.82)" }}
+            />
+            {/* Gradient overlay */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "linear-gradient(to right, transparent 60%, var(--charcoal) 100%)",
+              }}
+            />
+            <div
+              className="absolute inset-0 md:hidden"
+              style={{
+                background: "linear-gradient(to top, var(--charcoal) 20%, transparent 70%)",
+              }}
+            />
+          </div>
+
+          {/* Quote side */}
+          <div className="relative flex flex-col justify-center px-8 md:px-16 py-20 md:py-0 z-10">
+            {/* Decorative quote mark */}
+            <div
+              className="font-display leading-none select-none mb-6"
+              style={{ fontSize: "clamp(80px, 12vw, 140px)", color: "rgba(255,255,255,0.06)", lineHeight: 0.8 }}
+            >
+              "
+            </div>
+
+            <div className="reveal">
+              <p
+                className="font-display leading-[1.25] mb-8"
+                style={{
+                  fontWeight: 400,
+                  fontSize: "clamp(1.7rem, 3.2vw, 2.8rem)",
+                  color: "var(--warm-white)",
+                }}
+              >
+                Ты привык справляться{" "}
+                <em style={{ fontStyle: "italic" }}>сам.</em>
+              </p>
+            </div>
+
+            <div className="reveal reveal-delay-1">
+              <p
+                className="font-display leading-[1.25] mb-10"
+                style={{
+                  fontWeight: 400,
+                  fontSize: "clamp(1.7rem, 3.2vw, 2.8rem)",
+                  color: "rgba(250,247,243,0.55)",
+                }}
+              >
+                Но, возможно, именно{" "}
+                <em style={{ fontStyle: "italic" }}>это</em>{" "}
+                и не даёт тебе сдвинуться.
+              </p>
+            </div>
+
+            <div className="reveal reveal-delay-2 flex items-center gap-4">
+              <div className="w-8 h-px" style={{ backgroundColor: "var(--stone-light)" }}></div>
+              <span className="font-body text-xs tracking-[0.2em] uppercase" style={{ color: "var(--stone-light)" }}>
+                Анна Соколова
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
